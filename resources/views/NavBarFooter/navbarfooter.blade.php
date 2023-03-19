@@ -49,6 +49,7 @@
             </ul>
         </footer>
         </div>
+        <script src="{{asset('js/validation.js')}}"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/c2a0f18374.js" crossorigin="anonymous"></script>

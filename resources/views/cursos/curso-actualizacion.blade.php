@@ -8,7 +8,7 @@
             <div class="card">
                 <h5 class="card-header">Actualización Curso</h5>
                 <div class="card-body">
-                    <form method="POST" action="{{route('actualizar-curso')}}">
+                    <form method="POST" action="{{route('actualizar-curso')}}" class="needs-validation" novalidate>
 
                     @csrf
                     @method('put')
@@ -18,18 +18,18 @@
                         <div class="col-md-6 col-sm-6" id="marginTop">
                             <div class="form-floating">
                                 <input type="hidden" name="id" value="{{$curso->id}}">
-                                <input type="text" name="nombreCurso" value="{{$curso->nombreCurso}}" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                                <input type="text" name="nombreCurso" value="{{$curso->nombreCurso}}" class="form-control" id="floatingInputGrid" placeholder="name@example.com" required>
                                 <label for="floatingInputGrid">Nombre Curso</label>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6" id="marginTop">
                             <div class="form-floating">
-                                <input type="text" name="lugarCurso" value="{{$curso->lugarCurso}}" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                                <input type="text" name="lugarCurso" value="{{$curso->lugarCurso}}" class="form-control" id="floatingInputGrid" placeholder="name@example.com" required>
                                 <label for="floatingInputGrid">Lugar</label>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6" id="marginTop">
-                            <select class="form-select form-select-lg" name="id_docente" aria-label="Default select example">
+                            <select class="form-select form-select-lg" name="id_docente" aria-label="Default select example" required>
                                 <@foreach ($docentes as $docente)
                                     <option value="{{$docente->id}}"
                                         @if ($curso->docente->id == $docente->id)
